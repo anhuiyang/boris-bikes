@@ -26,7 +26,7 @@ describe DockingStation do
       expect(subject.dock(bike)).to eq [bike]
     end
     it 'raises error when capacity full' do
-      20.times{subject.dock(bike)}
+      DockingStation::DEFAULT_CAPACITY.times{subject.dock(bike)}
       expect {subject.dock(bike)}.to raise_error "no capacity"
     end
   end
