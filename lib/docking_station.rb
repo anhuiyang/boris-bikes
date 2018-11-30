@@ -1,6 +1,15 @@
-require 'bike'
+require_relative './bike'
+
 class DockingStation
+  attr_reader :bike
+
   def release_bike
-    Bike.new
+    fail "no bike" unless @bike != nil
+    @bike
   end
+
+  def dock(bike)
+    @bike = bike
+  end
+
 end
